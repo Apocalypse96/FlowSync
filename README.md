@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# **FlowSync: Newsletter Subscription Renewal Flow**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **Project Overview**
+**FlowSync** is an interactive and automated solution designed to manage newsletter subscription renewals. This project provides a visual simulation of the renewal process, allowing users to monitor each step, from sending reminders to tracking renewal outcomes. Built with **React**, **React Flow**, **Node.js**, and **MongoDB**, **FlowSync** delivers a modern and user-friendly experience with dynamic light and dark mode themes.
 
-## Available Scripts
+### **Features**
+1. **Interactive Flow Simulation**:
+   - A visual flowchart dynamically highlights each stage of the renewal process.
+   - Smooth transitions for a professional look.
+2. **Dynamic Light/Dark Mode**:
+   - Fully responsive and togglable light/dark modes.
+   - Entire page adapts seamlessly to the chosen theme.
+3. **Real-Time Logs**:
+   - Displays the progress of the flow, including reminders sent, responses received, and outcomes.
+4. **Backend Integration**:
+   - Node.js and MongoDB manage flow states, logs, and API interactions.
 
-In the project directory, you can run:
+### **How It Works**
+1. **Flow Process**:
+   - Sends the **first renewal reminder** email.
+   - Waits for 3 days while checking for renewal status.
+   - If no renewal:
+     - Sends a **second reminder** email.
+     - Waits an additional 2 days for a response.
+   - Final Actions:
+     - If the user renews, sends a **Thank You** email and ends the flow.
+     - If not renewed, ends the flow with no further actions.
+2. **Visual Representation**:
+   - Flowchart nodes represent each stage.
+   - Nodes are dynamically highlighted during execution.
 
-### `npm start`
+### **Tech Stack**
+- **Frontend**: React with React Flow
+- **Backend**: Node.js with Express
+- **Database**: MongoDB
+- **Styling**: CSS with responsive design for modern light and dark modes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **Project Assumptions**
+- Email sending is **simulated**; no actual emails are sent.
+- Delays are time-based and **simulated** for demonstration purposes.
+- MongoDB is used to store flow states and logs locally.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### **Installation Guide**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### **1. Clone the Repository**
+```bash
+git clone https://github.com/Apocalypse96/FlowSync.git
+cd FlowSync
+```
 
-### `npm run build`
+#### **2. Set Up the Frontend**
+```bash
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### **3. Set Up the Backend**
+```bash
+cd backend
+npm install
+node index.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### **4. Set Up MongoDB**
+- Ensure MongoDB is running locally or use a hosted MongoDB instance.
+- Update the connection string in the backend configuration file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### **5. Run the Application**
+- Open your browser and navigate to: `http://localhost:3000`.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Key Components**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### **Frontend**
+- **FlowSimulation.js**:
+  - Manages the flowchart simulation with dynamic updates.
+- **App.js**:
+  - Provides global theming and context for the components.
+- **Dynamic UI**:
+  - Implements light/dark mode for user preference.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### **Backend**
+- **Node.js API**:
+  - `/start-flow`: Starts the flow simulation and returns log details.
+- **Flow Logic**:
+  - Handles flow progression, including delays and status checks.
+- **Database**:
+  - MongoDB stores flow states and user interaction logs.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### **Styling**
+- Modern CSS features:
+  - Glassmorphism-inspired UI with responsive design.
+  - Seamless light/dark mode transitions for accessibility and aesthetics.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **How to Use**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Launch the application using the installation steps above.
+2. Click the **Start Flow** button to initiate the renewal process.
+3. View the flow simulation and real-time logs as the system progresses through reminders and responses.
+4. Toggle between light and dark modes for your preferred theme.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Future Enhancements**
 
-### Analyzing the Bundle Size
+1. **Email Integration**:
+   - Use email services like **SendGrid** or **AWS SES** to send real emails.
+2. **User Authentication**:
+   - Add user login to allow personalized subscription flows.
+3. **Customizable Flows**:
+   - Enable the creation of custom renewal flows for other processes.
+4. **Advanced Reporting**:
+   - Implement analytics dashboards to track renewal rates and user behavior.
+5. **Production Deployment**:
+   - Host the application on **Heroku**, **Vercel**, or similar platforms.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
